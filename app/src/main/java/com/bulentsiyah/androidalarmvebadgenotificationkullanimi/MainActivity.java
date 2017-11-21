@@ -10,6 +10,8 @@ import android.view.View;
 
 import java.util.Calendar;
 
+import me.leolin.shortcutbadger.ShortcutBadger;
+
 public class MainActivity extends AppCompatActivity {
 
     public static int alarmRequest=21;
@@ -18,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ShortcutBadger.removeCount(getApplicationContext());
     }
 
     public void btn_ELAPSED_REALTIME_WAKEUP(View v){
-        Intent myIntent = new Intent(getApplicationContext(), MyReceiver.class);
+        Intent myIntent = new Intent(getApplicationContext(), MyReceiverBadge.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), alarmRequest, myIntent,0);
 
         //cancelAlarmIfExists(getApplicationContext(),alarmRequest,myIntent);

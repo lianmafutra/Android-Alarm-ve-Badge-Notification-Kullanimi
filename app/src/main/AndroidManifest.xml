@@ -19,6 +19,8 @@
         </activity>
         <receiver android:name=".MyReceiver">
         </receiver>
+        <receiver android:name=".MyReceiverBadge">
+        </receiver>
     </application>
 
 </manifest>
